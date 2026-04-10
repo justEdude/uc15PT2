@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.uc15pt2.UI.fornecedores;
-
+package com.mycompany.uc15pt2.UI.produto;
 
 import com.mycompany.uc15pt2.telaInicial;
 import java.util.List;
@@ -14,31 +13,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author danto
  */
+public class listaProduto extends javax.swing.JFrame {
 
-public class FornecedorLista extends javax.swing.JFrame {
-
-    private void preencherTabela(List<fornecedores> vez){
+  private void preencherTabela(List<produto> vez){
         
-        String colunas[] = {"id", "nome", "Fornecimento", "Localizacao"};
+        String colunas[] = {"id", "nome", "Marca", "Tipo"};
         String Linha[][] = new String[vez.size()][colunas.length];
         int i = 0;
         
-        for(fornecedores f : vez){
+        for(produto p : vez){
             
             Linha[i] = new String[]{
-                String.valueOf(f.getId()),
-                f.getNome(),
-                f.getFornecimento(),
-                f.getLocalizacao()
+                String.valueOf(p.getId()),
+                p.getNome(),
+                p.getMarca(),
+                p.getTipo()
             };
             i++;
         };
-        
-        DefaultTableModel modelo = new DefaultTableModel(Linha, colunas);
-        tabelaFornecedores.setModel(modelo);
+                DefaultTableModel modelo = new DefaultTableModel(Linha, colunas);
+        jTable1.setModel(modelo);
     }
-    
-    public FornecedorLista() {
+    public listaProduto() {
         initComponents();
     }
 
@@ -51,20 +47,19 @@ public class FornecedorLista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaFornecedores = new javax.swing.JTable();
-        botaoPesquisa = new javax.swing.JButton();
+        jTable1 = new javax.swing.JTable();
         botaoVoltar = new javax.swing.JButton();
+        botaoPesquisa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
-        jLabel1.setText("Lista Fornecedores");
+        jLabel1.setText("Lista Produto");
 
-        tabelaFornecedores.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -72,7 +67,14 @@ public class FornecedorLista extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(tabelaFornecedores);
+        jScrollPane1.setViewportView(jTable1);
+
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         botaoPesquisa.setText("Listar");
         botaoPesquisa.addActionListener(new java.awt.event.ActionListener() {
@@ -85,33 +87,35 @@ public class FornecedorLista extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoPesquisa)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(150, 150, 150)
+                        .addComponent(botaoPesquisa))
+                    .addComponent(botaoVoltar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(botaoPesquisa))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(27, Short.MAX_VALUE)
+                        .addComponent(botaoPesquisa)
+                        .addGap(18, 18, 18)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(botaoVoltar))
         );
-
-        botaoVoltar.setText("Voltar");
-        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,41 +124,27 @@ public class FornecedorLista extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoVoltar)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(botaoVoltar)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        telaInicial tela = new telaInicial();
-        tela.setVisible(true);
-        FornecedorLista Fornecedor = new FornecedorLista();
-        Fornecedor.dispose();
+    volta();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisaActionPerformed
-
-        
         try{
-            fornecedoresDAO fornecedores = new fornecedoresDAO();
-            List<fornecedores> lista = fornecedores.listar();
+            produtosDAO produtos = new produtosDAO();
+            List<produto> lista = produtos.produtor();
             preencherTabela(lista);
-            }catch(Exception e){
+        }catch(Exception e){
             JOptionPane.showMessageDialog(this, "erro: " + e.getMessage());
-            }
-        
+        }
     }//GEN-LAST:event_botaoPesquisaActionPerformed
 
     /**
@@ -174,20 +164,20 @@ public class FornecedorLista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FornecedorLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(listaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FornecedorLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(listaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FornecedorLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(listaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FornecedorLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(listaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FornecedorLista().setVisible(true);
+                new listaProduto().setVisible(true);
             }
         });
     }
@@ -198,13 +188,12 @@ public class FornecedorLista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable tabelaFornecedores;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 public void volta(){
         telaInicial tela = new telaInicial();
         tela.setVisible(true);
-        FornecedorLista Fornecedor = new FornecedorLista();
-        Fornecedor.dispose();
+        listaProduto lista = new listaProduto();
+        lista.dispose();
 }
 }

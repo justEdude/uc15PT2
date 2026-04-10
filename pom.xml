@@ -21,12 +21,6 @@
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.33</version>
 </dependency>
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.2.0</version>
-            <type>jar</type>
-        </dependency>
     </dependencies>
     <name>UC15PT2</name>
 </project>

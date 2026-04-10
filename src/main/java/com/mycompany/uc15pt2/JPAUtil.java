@@ -4,7 +4,7 @@ package com.mycompany.uc15pt2;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-/*SEM NECESSIDADE DE REFATORACAO*/
+
 public class JPAUtil {
     
     private static final String PERSISTENCE_UNIT = "uc15-PU";

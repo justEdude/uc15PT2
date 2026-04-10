@@ -1,17 +1,18 @@
 
 package com.mycompany.uc15pt2.UI.fornecedores;
 
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import com.mycompany.uc15pt2.JPAUtil;
-import java.time.LocalDate;
-import java.time.LocalTime;
+
 import jakarta.persistence.Entity;
-/*SEM NECESSIDADE DE REFATORACAO*/
+import jakarta.persistence.Table;
+
+//criar o resto da tabela sql e criar uma classe para datas para as classes turnos e vendas
 @Entity
-public class fornecedores {
+@Table(name="fornecedores")
+public  class fornecedores {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
@@ -75,5 +76,4 @@ private String Localizacao;
     public void setLocalizacao(String Localizacao) {
         this.Localizacao = Localizacao;
     }
-
 }

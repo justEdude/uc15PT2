@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.uc15pt2.UI.fornecedores;
-
+package com.mycompany.uc15pt2.UI.produto;
 
 import com.mycompany.uc15pt2.telaInicial;
 import javax.swing.JOptionPane;
@@ -12,13 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author danto
  */
-
-public class CadastroFornecedor extends javax.swing.JFrame {
+public class CadastroProduto extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroFornecedor
+     * Creates new form CadastroProduto
      */
-    public CadastroFornecedor() {
+    public CadastroProduto() {
         initComponents();
     }
 
@@ -38,28 +36,22 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
-        campoFornecimento = new javax.swing.JTextField();
-        campoLocalizacao = new javax.swing.JTextField();
+        campoMarca = new javax.swing.JTextField();
+        campoTipo = new javax.swing.JTextField();
         campoCadastro = new javax.swing.JButton();
-        botaoVoltar1 = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
-        jLabel1.setText("Insira seu Fornecedor");
+        jLabel1.setText("Insira seu Produto");
 
         jLabel2.setText("Nome:");
 
-        jLabel3.setText("Produtos Fornecidos:");
+        jLabel3.setText("Marca:");
 
-        jLabel4.setText("Localizacao:");
-
-        campoFornecimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoFornecimentoActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("Tipo:");
 
         campoCadastro.setText("Cadastrar");
         campoCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -68,14 +60,14 @@ public class CadastroFornecedor extends javax.swing.JFrame {
             }
         });
 
-        botaoVoltar1.setText("Voltar");
-        botaoVoltar1.addActionListener(new java.awt.event.ActionListener() {
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltar1ActionPerformed(evt);
+                botaoVoltarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Fornecedor Lista");
+        jButton2.setText("Produto Lista");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -90,10 +82,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
+                        .addGap(154, 154, 154)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
@@ -101,17 +90,20 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoFornecimento, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(campoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jLabel1)))
                 .addContainerGap(154, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(botaoVoltar1)
-                .addGap(126, 126, 126)
+                .addGap(35, 35, 35)
+                .addComponent(botaoVoltar)
+                .addGap(134, 134, 134)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(campoCadastro)
-                .addGap(41, 41, 41))
+                .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,15 +119,15 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(campoFornecimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addComponent(campoLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoCadastro)
-                    .addComponent(botaoVoltar1)
+                    .addComponent(botaoVoltar)
                     .addComponent(jButton2))
                 .addGap(24, 24, 24))
         );
@@ -144,9 +136,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,18 +149,16 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCadastroActionPerformed
-         
         try{
-         
+            
+        produto produto = new produto();
         
-        fornecedores fornecedor = new fornecedores();
+        produto.setNome(campoNome.getText());
+        produto.setMarca(campoMarca.getText());
+        produto.setTipo(campoTipo.getText());
         
-        fornecedor.setNome(campoNome.getText());
-        fornecedor.setFornecimento(campoFornecimento.getText());
-        fornecedor.setLocalizacao(campoLocalizacao.getText());
-        
-        fornecedoresDAO fornecer = new fornecedoresDAO();
-        fornecer.salvar(fornecedor);
+        produtosDAO produtor = new produtosDAO();
+        produtor.salvar(produto);
        
         JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso");
         
@@ -180,17 +168,15 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoCadastroActionPerformed
 
-    private void botaoVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltar1ActionPerformed
-      volta();
-    }//GEN-LAST:event_botaoVoltar1ActionPerformed
-
-    private void campoFornecimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoFornecimentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoFornecimentoActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+    volta();
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        FornecedorLista vendas = new FornecedorLista();
+        listaProduto vendas = new listaProduto();
         vendas.setVisible(true);
+        CadastroProduto cadastro = new CadastroProduto();
+        cadastro.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -210,30 +196,30 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroFornecedor().setVisible(true);
+                new CadastroProduto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoVoltar1;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JButton campoCadastro;
-    private javax.swing.JTextField campoFornecimento;
-    private javax.swing.JTextField campoLocalizacao;
+    private javax.swing.JTextField campoMarca;
     private javax.swing.JTextField campoNome;
+    private javax.swing.JTextField campoTipo;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -245,7 +231,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 public void volta(){
         telaInicial tela = new telaInicial();
         tela.setVisible(true);
-        CadastroFornecedor Fornecedor = new CadastroFornecedor();
-        Fornecedor.dispose();
+        CadastroProduto cadastro = new CadastroProduto();
+        cadastro.dispose();
 }
 }

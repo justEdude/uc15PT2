@@ -1,21 +1,22 @@
 
-package com.mycompany.uc15pt2.UI.fornecedores;
+package com.mycompany.uc15pt2.UI.produto;
+
 
 import com.mycompany.uc15pt2.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import java.util.List;
 
-
-public class fornecedoresDAO {
-    
-    public void salvar (fornecedores func) {
+public class produtosDAO {
+    public void salvar (produto prod) {
         
         EntityManager em = JPAUtil.getEntityManager();
         
         try{
+        
+
         em.getTransaction().begin();
-        em.persist(func);
+        em.persist(prod);
         em.getTransaction().commit();
         System.out.println("sucesso");
         
@@ -29,19 +30,21 @@ public class fornecedoresDAO {
             JPAUtil.closeEM();
         }
     }
-    
-public List<fornecedores> listar (){
+               
+      public List<produto> produtor (){
         
-        fornecedoresDAO dao = new fornecedoresDAO();
+        
         EntityManager em = JPAUtil.getEntityManager();
-        List<fornecedores> lista = null;
+        
+        List<produto> lista = null;
         
         try{
             
-            String TextoQuery = "select f from fornecedores f ";
+            String TextoQuery = "select f from produto f ";
             Query consulta = em.createQuery(TextoQuery);
-      
+            
             lista = consulta.getResultList();
+            
             
         }catch(Exception e){
             
@@ -55,5 +58,4 @@ public List<fornecedores> listar (){
         return lista;
         
     }
-    
 }

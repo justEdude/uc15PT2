@@ -50,6 +50,9 @@ public class vendasCadastro extends javax.swing.JFrame {
         botaoVoltar = new javax.swing.JButton();
         textoData1 = new javax.swing.JLabel();
         campoHora = new javax.swing.JTextField();
+        boxDesconto = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        labelPorcentagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +103,17 @@ public class vendasCadastro extends javax.swing.JFrame {
 
         textoData1.setText("Data:");
 
+        boxDesconto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "3", "5", "10" }));
+        boxDesconto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxDescontoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Desconto:");
+
+        labelPorcentagem.setText("%");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,12 +130,22 @@ public class vendasCadastro extends javax.swing.JFrame {
                         .addComponent(textoCPF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoData, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoHora, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoData, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoHora, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelPorcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(textoVenda)
@@ -131,7 +155,7 @@ public class vendasCadastro extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(53, 53, 53)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addComponent(jButton3)
@@ -147,14 +171,20 @@ public class vendasCadastro extends javax.swing.JFrame {
                 .addComponent(textoVenda)
                 .addGap(41, 41, 41)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoCliente)
-                    .addComponent(campoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textoCliente)
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(campoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                        .addGap(32, 32, 32)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoValor)
-                    .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(labelPorcentagem))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoCPF)
@@ -215,9 +245,11 @@ public class vendasCadastro extends javax.swing.JFrame {
         try{
             
         vendas venda = new vendas(LocalDate.parse(campoData.getText(), DateTimeFormatter.ofPattern("dd-MM-y")), LocalTime.parse(campoHora.getText(), DateTimeFormatter.ofPattern("HH:mm:ss")));
-        
+        int valor =  (int) boxDesconto.getSelectedItem();
         venda.setCliente(campoCliente.getText());
-        venda.setValor(campoValor.getText());
+           int valorBruto = Integer.parseInt(campoValor.getText());
+           int totalBruto = Integer.parseInt(campoValor.getText());
+        venda.setValor(String.valueOf(desconto(valor, totalBruto, valorBruto)));
         venda.setCPF(Integer.parseInt(campoCpf.getText()));  
         
         vendasDAO vendas = new vendasDAO();
@@ -242,6 +274,10 @@ public class vendasCadastro extends javax.swing.JFrame {
         vendasCadastro vendas = new vendasCadastro();
         vendas.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void boxDescontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxDescontoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxDescontoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,6 +316,7 @@ public class vendasCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoVoltar;
+    private javax.swing.JComboBox<String> boxDesconto;
     private javax.swing.JTextField campoCliente;
     private javax.swing.JTextField campoCpf;
     private javax.swing.JTextField campoData;
@@ -288,9 +325,11 @@ public class vendasCadastro extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel labelPorcentagem;
     private javax.swing.JLabel textoCPF;
     private javax.swing.JLabel textoCliente;
     private javax.swing.JLabel textoData;
@@ -310,5 +349,15 @@ public void limpa(){
        campoCpf.setText("");
        campoData.setText("");
        campoHora.setText("");
+}
+
+public int desconto(int valor, int valorBruto, int totalBruto){
+    if(valor != 0){
+   int valorFinal = (valorBruto*valor)/100;
+   int resultado = totalBruto - valorFinal;
+   return resultado;
+    }else{
+        return valorBruto;
+    }
 }
 }

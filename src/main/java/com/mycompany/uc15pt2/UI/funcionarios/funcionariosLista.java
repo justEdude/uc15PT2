@@ -63,7 +63,7 @@ public class funcionariosLista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
-        jLabel1.setText("Lista Turnos");
+        jLabel1.setText("Lista Funcionarios");
 
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

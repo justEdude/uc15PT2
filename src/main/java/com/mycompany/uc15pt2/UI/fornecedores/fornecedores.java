@@ -5,7 +5,6 @@ package com.mycompany.uc15pt2.UI.fornecedores;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 

@@ -12,6 +12,7 @@ package com.mycompany.uc15pt2;
 public class UC15PT2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        telaInicial tela = new telaInicial();
+        tela.setVisible(true);
     }
     }

@@ -3,6 +3,7 @@
                  version="3.0" 
                  xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
         <persistence-unit name="uc15-PU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
          <class>com.mycompany.uc15pt2.EstoqueControle</class>
          <class>com.mycompany.uc15pt2.Unidade15</class>
          <class>com.mycompany.uc15pt2.JPAUtil</class>
